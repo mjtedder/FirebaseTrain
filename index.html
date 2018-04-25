@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--todo: Add edit/clear buttons, more BootStrap components-->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap 4 -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="
+  sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!--Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Firebase Railways</title>
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+  <!--Moment.js-->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <title>Firebase Train Schedule Database</title>
 </head>
 
 <body>
@@ -26,21 +33,41 @@
 
     <div class="row">
       <!--Well for Train form-->
-      <div class="col-lg-12">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Current Train Schedule</h3>
-          </div>
-          <div class="well"></div>
-        </div>
+    <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <strong>Current Train Schedule</strong>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover" id='trainTable'>
+          <thead>
+            <tr>
+              <th>Train</th>
+              <th>Destination</th>
+              <th>Frequency (min)</th>
+              <th>Next Arrival</th>
+              <th>Minutes Away</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
+</div>
+
+
     <div class="row">
       <!--Add Train Form-->
       <div class="col-lg-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Add Train</h3>
+            <h3 class="panel-title">
+              <strong>Add Train</strong>
+            </h3>
           </div>
             <form role="form">
               <div class="form-group">
@@ -59,19 +86,19 @@
                 <label for="frequency">Frequency (min)</label>
                 <input type="text" class="form-control" id="frequency">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
             </form>
           </div>
         </div>
       </div>
     </div>
 
-<!--jQuery-->
+<!--Scripts-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<!--Popper JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<!--Bootstrap 4-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--Linking JavaScript-->
+<script type="text/javascript" src="assets/javascript/logic.js"></script>
 </body>
 
 </html>
